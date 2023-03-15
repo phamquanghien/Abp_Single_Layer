@@ -20,6 +20,22 @@ namespace TodoApp.Migrations
                 .HasAnnotation("_Abp_DatabaseProvider", EfCoreDatabaseProvider.Sqlite)
                 .HasAnnotation("ProductVersion", "7.0.1");
 
+            modelBuilder.Entity("TodoApp.Entities.Student", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Address")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("FullName")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Students", (string)null);
+                });
+
             modelBuilder.Entity("TodoApp.Entities.TodoItem", b =>
                 {
                     b.Property<Guid>("Id")

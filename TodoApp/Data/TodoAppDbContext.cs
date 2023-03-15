@@ -18,6 +18,7 @@ public class TodoAppDbContext : AbpDbContext<TodoAppDbContext>
     {
     }
     public DbSet<TodoItem> TodoItems { get; set; }
+    public DbSet<Student> Students { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
@@ -37,6 +38,10 @@ public class TodoAppDbContext : AbpDbContext<TodoAppDbContext>
         builder.Entity<TodoItem>(b =>
         {
             b.ToTable("TodoItems");
+        });
+        builder.Entity<Student>(b =>
+        {
+            b.ToTable("Students");
         });
     }
 }

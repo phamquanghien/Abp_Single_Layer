@@ -31,6 +31,16 @@ public class TodoAppMenuContributor : IMenuContributor
                 order: 0
             )
         );
+        context.Menu.Items.Insert(
+            1,
+            new ApplicationMenuItem(
+                TodoAppMenus.Home,
+                l["Menu:Student"],
+                "~/Student/index",
+                icon: "fas fa-home",
+                order: 1
+            )
+        );
 
         if (TodoAppModule.IsMultiTenant)
         {
